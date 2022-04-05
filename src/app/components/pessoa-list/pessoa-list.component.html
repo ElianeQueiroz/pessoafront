@@ -1,0 +1,37 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Pesquisar Pessoa"
+          [(ngModel)]="id"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchPessoa()"
+          >
+            Pesquisar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Lista de Pessoa</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let pessoa of pessoas; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivePessoa(pessoa, i)"
+        >
+          {{ pessoa.id }}  -  {{ pessoa.nome }}
+        </li>
+      </ul>
+      <button class="m-3 btn btn-sm btn-danger" (click)="removePessoa()">
+        Deletar
+      </button>
+    </div>
+  </div>
