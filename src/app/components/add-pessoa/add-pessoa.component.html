@@ -22,6 +22,17 @@
             name="nome"
           />
         </div>
+        <div class="form-group">
+          <label for="description">Admissão</label>
+          <input
+            type="date"
+            class="form-control"
+            id="admissao"
+            required
+            [(ngModel)]="pessoa.admissao"
+            name="admissao"
+          />
+        </div>
         <button (click)="savePessoa()" class="btn btn-success">Salvar</button>
       </div>
       <div *ngIf="submitted">

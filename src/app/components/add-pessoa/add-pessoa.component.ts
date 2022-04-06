@@ -11,6 +11,7 @@ export class AddPessoaComponent implements OnInit {
   pessoa = {
     id: null,
     nome: '',
+    admissao: null,
     published: false
   };
   submitted = false;
@@ -20,7 +21,8 @@ export class AddPessoaComponent implements OnInit {
   savePessoa(): void {
     const data = {
       id: this.pessoa.id,
-      nome: this.pessoa.nome
+      nome: this.pessoa.nome,
+      admissao: this.pessoa.admissao
     };
     this.pessoaService.create(data)
       .subscribe(
@@ -37,6 +39,7 @@ export class AddPessoaComponent implements OnInit {
     this.pessoa = {
       id: null,
       nome: '',
+      admissao: null,
       published: false
     };
   }
